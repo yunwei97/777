@@ -39,8 +39,8 @@ export default {
     const router = useRouter()
     const state = reactive({
       ruleForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       checked: true,
       rules: {

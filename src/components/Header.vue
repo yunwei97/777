@@ -10,6 +10,7 @@
         :width="320"
         trigger="click"
         popper-class="popper-user-box"
+        @show="ff"
       >
         <template #reference>
           <div class="author">
@@ -36,6 +37,9 @@ import { localRemove, pathMap } from '../utils/index.js'
 export default {
   name: 'Header',
   setup() {
+    const ff = () => {
+      getUserInfo()
+    }
     const router = useRouter()
     const state = reactive({
       name: '主页',
@@ -74,7 +78,8 @@ export default {
     return {
       ...toRefs(state),
       logout,
-      back
+      back,
+      ff
     }
   }
 }
