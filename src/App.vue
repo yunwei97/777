@@ -93,7 +93,7 @@ export default {
       }
     })
     const toHome = () => {
-      window.location.href = '/'
+      router.push('/')
     }
     // 监听浏览器原生回退事件
     if (window.history && window.history.pushState) {

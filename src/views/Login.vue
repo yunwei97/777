@@ -30,11 +30,13 @@ import axios from '../utils/axios.js'
 import { reactive, ref, toRefs } from 'vue'
 import { localSet } from '../utils/index.js'
 import { ElMessage } from 'element-plus'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'Login',
   setup() {
     const loginForm = ref(null)
+    const router = useRouter()
     const state = reactive({
       ruleForm: {
         username: '',
@@ -59,7 +61,7 @@ export default {
           }).then(res => {
             ElMessage.success('登陆成功!')
             localSet('token', res.token)
-            window.location.href = '/'
+            router.push('/')
           }).catch(e => {console.log(e)})
         } else {
           console.log('error submit!!')
