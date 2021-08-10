@@ -2,7 +2,7 @@
     <div class="footer">
       <div class="left">Copyright © 2019-2021 印第安小斑鸠. All rights reserved.</div>
       <div class="right">
-        <a target="_blank" href="https://www.baidu.com">幻想乡♂</a>
+        <a target="_blank" href="https://github.com/yunwei97">幻想乡♂</a>
       </div>
     </div>
 </template>
