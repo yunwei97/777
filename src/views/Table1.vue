@@ -8,9 +8,9 @@
           </div>
         </template>
         <el-descriptions>
-          <el-descriptions-item label="姓名:">嘻嘻哈</el-descriptions-item>
+          <el-descriptions-item label="姓名:">苏炳添</el-descriptions-item>
           <el-descriptions-item label="学号:">20210996</el-descriptions-item>
-          <el-descriptions-item label="班级:">高三(3)班</el-descriptions-item>
+          <el-descriptions-item label="班级:">三年二班</el-descriptions-item>
           <el-descriptions-item label="职位:">
             <el-tag size="small">团支书</el-tag>
           </el-descriptions-item>
