@@ -21,13 +21,13 @@
               <span>图表</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/charts"><i class="el-icon-data-line" />全是图表</el-menu-item>
+              <el-menu-item index="/charts"><i class="el-icon-data-line" />ECharts图表</el-menu-item>
               
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="2">
             <template #title>
-              <span>首页配置</span>
+              <span>UI框架工具</span>
             </template>
             <el-menu-item-group>
               <el-menu-item index="/swiper"><i class="el-icon-picture" />轮播图</el-menu-item>
@@ -36,12 +36,12 @@
           </el-submenu>
           <el-submenu index="3">
             <template #title>
-              <span>各种表格</span>
+              <span>表格</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/table_1"><i class="el-icon-menu" />表格1</el-menu-item>
-              <el-menu-item index="/table_2"><i class="el-icon-menu" />表格2</el-menu-item>
-              <el-menu-item index="/table_3"><i class="el-icon-menu" />表格3</el-menu-item>
+              <el-menu-item index="/table_1"><i class="el-icon-menu" />个人信息</el-menu-item>
+              <el-menu-item index="/table_2"><i class="el-icon-menu" />年级排名</el-menu-item>
+              <el-menu-item index="/table_3"><i class="el-icon-menu" />地图定位</el-menu-item>
               <el-menu-item index="/table_4"><i class="el-icon-menu" />表格4</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -75,6 +75,7 @@ import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import { useRouter } from 'vue-router'
 import { pathMap, localGet } from './utils'
+import { ElMessage } from 'element-plus'
 export default {
   name: 'App',
   components: {
@@ -108,7 +109,12 @@ export default {
     const unwatch = router.beforeEach((to, from, next) => {
       if (to.path == '/login') {
         // 如果路径是 /login 则正常执行
+        if(!localGet('token')) {
         next()
+        }else {
+          ElMessage.warning('你已经登录了，请问是要注销账号吗？')
+          next({path: '/account'})
+        }
       } else {
         // 如果不是 /login，判断是否有 token
         if (!localGet('token')) {

@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["account"],{"77be":function(e,n,t){"use strict";t.r(n);var c=t("7a23");function o(e,n){var t=Object(c["N"])("el-empty");return Object(c["E"])(),Object(c["i"])(t,{description:"这里是账户界面"})}const r={};r.render=o;n["default"]=r}}]);
-//# sourceMappingURL=account.b3d6f4a9.js.map

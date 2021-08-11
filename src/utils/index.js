@@ -20,9 +20,9 @@ export function localGet (key) {
     Login: '登录',
     Charts: '图表',
     Swiper: '轮播图',
-    Table1: '表格1',
-    Table2: '表格2',
-    Table3: '表格3',
-    Table4: '表格4',
-    Account: '修改账户'
+    Table1: '个人信息',
+    Table2: '年级排名',
+    Table3: '地图定位',
+    Table4: '预留页面',
+    Account: '注销账户'
   }
