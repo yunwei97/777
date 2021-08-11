@@ -90,11 +90,12 @@ export default {
     width: 100%;
     background-color: #fff;
     /* background-image: linear-gradient(25deg, #077f7c, #3aa693, #5ecfaa, #7ffac2); */
+    background-image: linear-gradient(25deg, #077f7f, #3aa6a1, #5ea6cf, #7fc3fa);
   }
   .login-container {
     width: 420px;
     height: 500px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255,0.5);
     border-radius: 4px;
     box-shadow: 0 21px 41px 0 rgba(0, 0, 0, 0.2);
   }

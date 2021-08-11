@@ -47,11 +47,7 @@ export default {
       hasBack: false
     })
     onMounted(() => {
-      const pathname = window.location.hash.split('/')[1] || ''
-      //如果当前页面不是登录页面，则拉取用户信息。
-      if (!['login'].includes(pathname)) {
         getUserInfo()
-      }
     })
     const getUserInfo = async () => {
       const userInfo = await axios.get('/api/userinfo');

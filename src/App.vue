@@ -104,6 +104,7 @@ export default {
         }
       }, false);
     }
+    //路由守卫
     const unwatch = router.beforeEach((to, from, next) => {
       if (to.path == '/login') {
         // 如果路径是 /login 则正常执行
