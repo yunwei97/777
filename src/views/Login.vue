@@ -16,7 +16,7 @@
               <el-input type="password" v-model.trim="ruleForm.password" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item>
-              <div style="color: #333">登录表示您已同意<a href="https://www.qq.com/contract.shtml" target="_blank">《服务条款》</a></div>
+              <div style="color: #333">登录即表示您已同意<a href="https://www.qq.com/contract.shtml" target="_blank">《服务条款》</a></div>
               <el-button style="width: 100%" type="primary" @click="submitForm">立即登录</el-button>
               <el-checkbox v-model="checked" @change="!checked">下次自动登录</el-checkbox>
             </el-form-item>
