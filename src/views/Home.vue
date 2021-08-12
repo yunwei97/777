@@ -29,7 +29,8 @@
     <ul>
       <li><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a></li>
       <li><a href="https://git-scm.com/" target="_blank" rel="noopener">git</a></li>
-      <li><a href="https://echarts.apache.org/zh/index.html" target="_blank" rel="noopener">Apache ECharts</a></li>
+      <li><a href="https://echarts.apache.org/zh/index.html" target="_blank" rel="noopener">ECharts</a></li>
+      <li><a href="http://www.axios-js.com/" target="_blank" rel="noopener">axios</a></li>
       <li><a href="https://zh.javascript.info/" target="_blank" rel="noopener">现代 JavaScript 教程</a></li>
       <li><a href="https://lbs.amap.com/" target="_blank" rel="noopener">高德开放平台</a></li>
     </ul>
