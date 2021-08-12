@@ -81,6 +81,7 @@
 <script>
 import { reactive,toRefs,onMounted } from 'vue'
 import axios from '../utils/axios.js'
+import { ElMessage } from 'element-plus'
 
 export default {
     methods: {
@@ -138,6 +139,11 @@ export default {
             })
         }
         onMounted(() => {
+          ElMessage({
+            message:"通过右侧的开关按钮以切换文/理科排名👉",
+            offset: 50,
+            type: "warning"
+          })
           loadScope()
         })
         return {

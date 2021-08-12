@@ -59,7 +59,7 @@ export default {
             username: state.ruleForm.username || '',
             password: state.ruleForm.password
           }).then(res => {
-            ElMessage.success('登陆成功!')
+            ElMessage.success('登陆成功！')
             localSet('token', res.token)
             router.push('/')
           }).catch(e => {console.log(e)})

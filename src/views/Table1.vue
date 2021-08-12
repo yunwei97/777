@@ -14,7 +14,7 @@
           <el-descriptions-item label="职位:">
             <el-tag size="small">团支书</el-tag>
           </el-descriptions-item>
-          <el-descriptions-item label="班主任:">龙虹</el-descriptions-item>
+          <el-descriptions-item label="班主任:">袁国强</el-descriptions-item>
         </el-descriptions>
       </el-card>
       <el-card class="header-item">
@@ -41,7 +41,7 @@
         <el-button type="primary" icon="el-icon-notebook-2" @click="checkTable">点击查看课程表</el-button>
       </el-card>
     </div>
-  <el-tabs type="border-card" @tab-click="loadChart">
+  <el-tabs type="border-card" @tab-click="loadChart" v-model="activeName">
     <el-tab-pane label="成绩涨跌" class="tagBox" name="all"><div id="all" class="tagBox"></div></el-tab-pane>
     <el-tab-pane label="得分详情——语文" class="tagBox" name="chinese"><div id="chinese" class="tagBox"></div></el-tab-pane>
     <el-tab-pane label="得分详情——数学" class="tagBox" name="math"><div id="math" class="tagBox"></div></el-tab-pane>
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref,reactive,onMounted } from 'vue'
 import TianAn from '../components/TianAn.vue'
 import * as chart from 'echarts'
 import axios from '../utils/axios'
@@ -73,6 +73,7 @@ export default {
       if(myChart) {
         myChart.dispose()
       }
+      console.log(e.props.name)
       axios.get(`/chart/score/${e.props.name}`)
       .then((res) => {
       const option = res.data
@@ -82,11 +83,31 @@ export default {
         console.log(x)
       })
     }
+    const initChart = () => {
+      if(myChart) {
+        myChart.dispose()
+      }
+      axios.get(`/chart/score/${state.activeName}`)
+      .then((res) => {
+      const option = res.data
+      myChart = chart.init(document.getElementById(`${state.activeName}`));
+      myChart.setOption(option);
+      }).catch((x) => {
+        console.log(x)
+      })
+    }
      const tableC = ref(null)
      const checkTable = () => {
        tableC.value.open()
      }
+     const state = reactive({
+      activeName:"all"
+     })
+     onMounted(() => {
+       initChart()
+     })
       return {
+        ...state,
         checkTable,
         loadChart,
         tableC
