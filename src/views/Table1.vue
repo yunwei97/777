@@ -4,7 +4,7 @@
       <el-card class="header-item">
         <template #header>
           <div class="card-header">
-            <span>个人信息</span>
+            <span>我的信息</span>
           </div>
         </template>
         <el-descriptions>
@@ -12,7 +12,7 @@
           <el-descriptions-item label="学号:">20210996</el-descriptions-item>
           <el-descriptions-item label="班级:">三年二班</el-descriptions-item>
           <el-descriptions-item label="职位:">
-            <el-tag size="small">团支书</el-tag>
+            <el-tag size="small">学习委员</el-tag>
           </el-descriptions-item>
           <el-descriptions-item label="班主任:">袁国强</el-descriptions-item>
         </el-descriptions>

@@ -42,7 +42,7 @@
               <el-menu-item index="/table_1"><i class="el-icon-menu" />个人信息</el-menu-item>
               <el-menu-item index="/table_2"><i class="el-icon-menu" />年级排名</el-menu-item>
               <el-menu-item index="/table_3"><i class="el-icon-menu" />地图定位</el-menu-item>
-              <el-menu-item index="/table_4"><i class="el-icon-menu" />表格4</el-menu-item>
+              <el-menu-item index="/table_4"><i class="el-icon-menu" />班级管理</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="4">
@@ -50,7 +50,7 @@
               <span>系统管理</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/account"><i class="el-icon-lock" />修改密码</el-menu-item>
+              <el-menu-item index="/account"><i class="el-icon-lock" />注销</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>

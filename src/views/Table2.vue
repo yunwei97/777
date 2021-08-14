@@ -2,7 +2,7 @@
     <el-card class="scope-card">
         <template #header>
           <div class="scope-card-header">
-            <span>成绩排名</span>
+            <span>2021年5月份的月考成绩公示</span>
             <el-switch v-model="switchOn"
              :loading="loading" 
              @change="loadScope" 

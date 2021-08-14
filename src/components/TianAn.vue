@@ -42,8 +42,7 @@ style="width: 100%">
 </el-table>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="dialogVisible = false">取 消</el-button>
-      <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      该课程表适用于2021秋季学期~2022春季学期
     </span>
   </template>
 </el-dialog>

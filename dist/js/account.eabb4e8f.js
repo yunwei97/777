@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["account"],{"77be":function(e,t,n){"use strict";n.r(t);var c=n("7a23");function i(e,t,n,i,o,r){var s=Object(c["N"])("el-empty");return Object(c["E"])(),Object(c["i"])(s,{description:"这里是注销界面"})}var o=n("3fd4"),r={setup:function(){Object(c["B"])((function(){Object(o["b"])({title:"注销提醒",message:"点击此处以注销账户----------👆",offset:20})}))}};r.render=i;t["default"]=r}}]);
-//# sourceMappingURL=account.eabb4e8f.js.map

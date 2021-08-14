@@ -23,6 +23,6 @@ export function localGet (key) {
     Table1: '个人信息',
     Table2: '年级排名',
     Table3: '地图定位',
-    Table4: '预留页面',
+    Table4: '班级管理',
     Account: '注销账户'
   }
