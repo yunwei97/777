@@ -56,7 +56,7 @@
     />
       </el-card>
       <!-- 编辑弹出框 -->
-      <el-dialog title="编辑" v-model="editVisible" width="30%">
+      <el-dialog title="编辑" v-model="editVisible" width="30%" @close = "nosave">
         <el-form label-width="70px">
             <el-form-item label="姓名">
                 <el-input v-model="form.name"></el-input>
@@ -70,7 +70,7 @@
         </el-form>
         <template #footer>
             <span class="dialog-footer">
-                <el-button @click="editVisible = false">取 消</el-button>
+                <el-button @click="nosave">取 消</el-button>
                 <el-button type="primary" @click="saveEdit">确 定</el-button>
             </span>
         </template>
@@ -79,18 +79,18 @@
     <el-dialog title="添加插班生" v-model="addVisible" width="30%">
       <el-form label-width="70px">
           <el-form-item label="姓名">
-              <el-input v-model="form.name"></el-input>
+              <el-input v-model.trim="form.name" placeholder="请输入插班生的姓名"></el-input>
           </el-form-item>
           <el-form-item label="宿舍">
-              <el-input v-model="form.dormitory"></el-input>
+              <el-input v-model.trim="form.dormitory" placeholder="请输入插班生所在宿舍"></el-input>
           </el-form-item>
           <el-form-item label="分数">
-            <el-input v-model="form.totalscore"></el-input>
+            <el-input v-model.trim="form.totalscore" placeholder="请输入插班生的分数"></el-input>
         </el-form-item>
       </el-form>
       <template #footer>
           <span class="dialog-footer">
-              <el-button @click="editVisible = false">取 消</el-button>
+              <el-button @click="addVisible = false">取 消</el-button>
               <el-button type="primary" @click="addStudent">确 定</el-button>
           </span>
       </template>
@@ -121,7 +121,21 @@ export default {
             totalscore:""
         });
         let idx = -1;
+        const nosave = () => {
+          editVisible.value = false;
+          form.name = "";
+          form.dormitory = "";
+          form.totalscore = ""
+        }
         const addStudent = () => {
+          if((form.name == "") || (form.dormitory == "") || (form.totalscore == "")){
+            ElMessage.warning("请输入相关数据")
+            return
+          }
+          if(form.totalscore < 0 || form.totalscore > 750) {
+            ElMessage.warning("分数有误")
+            return
+          }
           state.tableData.push(form);
           ElMessage.success(` ${state.tableData[state.tableData.length-1].name} 插班成功`);
           addVisible.value = false
@@ -134,6 +148,10 @@ export default {
             editVisible.value = true;
         };
         const saveEdit = () => {
+            if(form.totalscore < 0 || form.totalscore > 750) {
+              ElMessage.warning("分数有误")
+              return
+            }
             editVisible.value = false;
             ElMessage.success(`修改第 ${idx + 1} 行成功`);
             Object.keys(form).forEach((item) => {
@@ -177,6 +195,7 @@ export default {
             ...toRefs(state),
             loadScope,
             form,
+            nosave,
             editVisible,
             addVisible,
             saveEdit,

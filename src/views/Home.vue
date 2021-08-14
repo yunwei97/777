@@ -3,7 +3,7 @@
     <h1>欢迎来到主页！</h1>
     <p>
       Deep dark fantasy ♂
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      <a href="https://cli.vuejs.org/zh/" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
     <h3>UI框架</h3>
     <ul>
@@ -11,18 +11,17 @@
     </ul>
     <h3>Vue3 相关链接</h3>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://v3.cn.vuejs.org/" target="_blank" rel="noopener">文档</a></li>
+      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">论坛</a></li>
+      <li><a href="https://www.weibo.com/p/1005051761511274" target="_blank" rel="noopener">尤雨溪的微博</a></li>
       <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
     </ul>
     <h3>Vue 生态</h3>
     <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
+      <li><a href="https://next.router.vuejs.org/zh/" target="_blank" rel="noopener">vue-router</a></li>
+      <li><a href="https://next.vuex.vuejs.org/zh/index.html" target="_blank" rel="noopener">vuex</a></li>
       <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
+      <li><a href="https://vue-loader.vuejs.org/zh/" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
     <h3>工具</h3>
