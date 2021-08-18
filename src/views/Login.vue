@@ -59,12 +59,13 @@ export default {
             username: state.ruleForm.username || '',
             password: state.ruleForm.password
           }).then(res => {
-            ElMessage.success('登陆成功！')
+            ElMessage.success('登陆成功！欢迎你！')
             localSet('token', res.token)
             router.push('/')
           }).catch(e => {console.log(e)})
         } else {
           console.log('error submit!!')
+          ElMessage.warning('你还没有输入账号密码')
           return false;
         }
       })
