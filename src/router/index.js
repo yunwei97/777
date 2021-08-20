@@ -49,6 +49,11 @@ const routes = [
     path: '/swiper',
     name: 'Swiper',
     component: () => import(/* webpackChunkName: "swiper" */ '../views/Swiper.vue')
+  },
+  {
+    path: '/:pathMatch(.*)',
+    name: '404',
+    component: () => import(/* webpackChunkName: "404NotFound" */ '../views/NotFound.vue')
   }
 ]
 
