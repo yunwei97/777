@@ -18,7 +18,7 @@
             <el-form-item>
               <div style="color: #333">登录即表示您已同意<a href="https://www.qq.com/contract.shtml" target="_blank">《服务条款》</a></div>
               <el-button style="width: 100%" type="primary" @click="submitForm">立即登录</el-button>
-              <el-checkbox v-model="checked" @change="!checked">下次自动登录</el-checkbox>
+              <el-checkbox v-model="checked" @change="!checked">{{boxText}}</el-checkbox>
             </el-form-item>
           </el-form>
         </div>
@@ -27,7 +27,7 @@
 
 <script>
 import axios from '../utils/axios.js'
-import { reactive, ref, toRefs } from 'vue'
+import { reactive, ref, toRefs, computed } from 'vue'
 import { localSet } from '../utils/index.js'
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
@@ -52,6 +52,13 @@ export default {
         ]
       }
     })
+    const boxText = computed(() => {
+      if(state.checked) {
+        return "一天之内保留登陆状态"
+      } else {
+        return "15分钟之后自动注销"
+      }
+    })
     const submitForm = async () => {
       loginForm.value.validate((valid) => {
         if (valid) {
@@ -60,7 +67,11 @@ export default {
             password: state.ruleForm.password
           }).then(res => {
             ElMessage.success('登陆成功！欢迎你！')
-            localSet('token', res.token)
+            if(state.checked) {
+            localSet('token', res.token + 86400000)
+            } else {
+              localSet('token',res.token)
+            }
             router.push('/')
           }).catch(e => {console.log(e)})
         } else {
@@ -75,6 +86,7 @@ export default {
     }
     return {
       ...toRefs(state),
+      boxText,
       loginForm,
       submitForm,
       resetForm

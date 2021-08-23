@@ -39,10 +39,10 @@
               <span>表格</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/table_1"><i class="el-icon-menu" />个人信息</el-menu-item>
-              <el-menu-item index="/table_2"><i class="el-icon-menu" />年级排名</el-menu-item>
-              <el-menu-item index="/table_3"><i class="el-icon-menu" />地图定位</el-menu-item>
-              <el-menu-item index="/table_4"><i class="el-icon-menu" />班级管理</el-menu-item>
+              <el-menu-item index="/table_1"><i class="el-icon-s-custom" />个人信息</el-menu-item>
+              <el-menu-item index="/table_2"><i class="el-icon-tickets" />年级排名</el-menu-item>
+              <el-menu-item index="/table_3"><i class="el-icon-map-location" />地图定位</el-menu-item>
+              <el-menu-item index="/table_4"><i class="el-icon-collection" />班级管理</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="4">
@@ -74,7 +74,7 @@ import { onUnmounted, reactive } from 'vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import { useRouter } from 'vue-router'
-import { pathMap, localGet } from './utils'
+import { pathMap, localGet, localRemove } from './utils'
 import { ElMessage } from 'element-plus'
 export default {
   name: 'App',
@@ -116,14 +116,17 @@ export default {
           next({path: '/account'})
         }
       } else {
-        // 如果不是 /login，判断是否有 token
+        // 如果不是 /login，判断是否有 token 或者token是否过期
+        if(localGet('token') < ((new Date()).getTime() - 600000)) {
+          localRemove('token');
+        }  
         if (!localGet('token')) {
           // 如果没有，则跳至登录页面
           next({ path: '/login' })
         } else {
           // 否则继续执行
           next()
-        }
+        }  
       }
       state.showMenu = !noMenu.includes(to.path)
       state.currentPath = to.path

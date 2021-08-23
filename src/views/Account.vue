@@ -11,7 +11,7 @@ export default {
         onMounted(() => {
         ElNotification({
           title: '注销提醒',
-          message: '点击此处以注销账户----------👆',
+          message: '点击上方以注销账户----------👆',
           offset: 20
         });
         })

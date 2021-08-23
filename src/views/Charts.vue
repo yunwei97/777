@@ -4,7 +4,7 @@
             <el-card class="card-item">
                 <template #header>
                     <div class="card-header">
-                        <span>本届欧冠冠军</span>
+                        <span>🏆本届欧冠冠军</span>
                     </div>
                 </template>
                 <div>切尔西</div>
@@ -12,18 +12,18 @@
             <el-card class="card-item">
                 <template #header>
                     <div class="card-header">
-                        <span>最佳射手</span>
+                        <span>⚽最佳射手</span>
                     </div>
                 </template>
-                <div>哈兰德</div>
+                <div>埃尔林·哈兰德</div>
             </el-card>
             <el-card class="card-item">
                 <template #header>
                     <div class="card-header">
-                        <span>金球奖预测</span>
+                        <span>🧤最佳门将</span>
                     </div>
                 </template>
-                <div>坎特</div>
+                <div>爱德华·门迪</div>
             </el-card>
         </div>
         <div id="chart"></div>
